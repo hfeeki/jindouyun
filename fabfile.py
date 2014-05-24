@@ -89,9 +89,9 @@ def deploy():
 
 def deploy_proj(loc):
     rsync_project(local_dir=loc, remote_dir=remote_working_dir, exclude=['.git','bin','data','logs', '*.pem', 'tmp', '.vendor'])
-    # stop()
-    # build()
-    # start()
+    stop()
+    build()
+    start()
 
 
 def start_nginx():
