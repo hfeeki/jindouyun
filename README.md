@@ -1,4 +1,11 @@
-jindouyun
-=========
+mojing
+======
 
-筋斗云
+魔镜网站
+
+
+Deploy 
+=======
+  command: fab deploy_proj:loc=.
+
+
