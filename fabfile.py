@@ -89,11 +89,16 @@ def deploy():
 
 def deploy_proj(loc):
     rsync_project(local_dir=loc, remote_dir=remote_working_dir, exclude=['.git','bin','data','logs', '*.pem', 'tmp', '.vendor'])
-    stop()
-    build()
-    start()
+    # stop()
+    # build()
+    # start()
 
-def start_circusd():
+
+def start_nginx():
+    with cd(remote_working_dir):
+        sudo("nginx -c nginx.conf")
+
+def boot_circusd():
     with cd(remote_working_dir):
         run("/usr/local/bin/circusd --daemon circus.ini")
 
@@ -105,6 +110,9 @@ def start():
 
 def stop():
     run("/usr/local/bin/circusctl stop jindouyun")
+
+def status():
+    run("/usr/local/bin/circusctl status")
 
 def build():
     with shell_env(GOROOT="/home/ubuntu/go", GOPATH="/home/ubuntu/.go"):
