@@ -40,7 +40,7 @@ env = Environment(TOOLS=['default', 'go'], ENV = {'PATH' : os.environ['PATH']+':
 srclist = ['src/main.go']
 
 # A simple program
-env.GoProgram('bin/mojing', srclist)
+env.GoProgram('bin/jindouyun', srclist)
 
 # Decider('MD5-timestamp')
 env.Decider('MD5')

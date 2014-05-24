@@ -8,3 +8,4 @@ bin/*
 mojing.sublime-project
 mojing.sublime-workspace
 .vendor/*
+*.pem

@@ -1,32 +1,24 @@
 <!-- templates/layout.tmpl -->
 
-<!DOCTYPE HTML>
-<!--
-	Aerial 1.0 by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
+<!DOCTYPE html> 
+<html> 
 	<head>
-		<title>魔镜科技</title>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
-		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script src="/js/skel.min.js"></script>
-		<script src="/js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="/css/skel.css" />
-			<link rel="stylesheet" href="/css/style.css" />
-			<link rel="stylesheet" href="/css/style-wide.css" />
-			<link rel="stylesheet" href="/css/style-noscript.css" />
-		</noscript>
-		<!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
-		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
-	</head>
-	<body class="loading">
-		<!-- Render the current template here -->
-    	{{ yield }}
-		
-	</body>
+  <meta charset="UTF-8">	
+	<title>Restaurant Picker</title> 
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="/css/jquery.mobile.structure-1.0.1.css" />
+	<link rel="apple-touch-icon" href="/images/launch_icon_57.png" />
+	<link rel="apple-touch-icon" sizes="72x72" href="/images/launch_icon_72.png" />
+	<link rel="apple-touch-icon" sizes="114x114" href="/images/launch_icon_114.png" />
+	<link rel="stylesheet" href="/css/jquery.mobile-1.0.1.css" />
+	<link rel="stylesheet" href="/css/custom.css" />
+	<script src="/js/jquery-1.7.1.min.js"></script>
+	<script src="/js/jquery.mobile-1.0.1.min.js"></script>
+</head> 
+
+<body> 
+	<!-- Render the current template here -->
+   	{{ yield }}
+</body>
 </html>

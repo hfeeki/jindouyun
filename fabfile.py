@@ -16,11 +16,11 @@ from fabric.contrib.project import rsync_project
 # env.use_ssh_config = True
 env.user = 'ubuntu'
 # env.password = 'rtmap2013'
-env.hosts = ['54.200.138.17', ]
-env.key_filename = 'aws.pem'
-env.roledefs = {
-    'test': ['115.28.171.71']
-}
+env.hosts = ['54.200.249.250', ]
+env.key_filename = 'jindouyun.pem'
+# env.roledefs = {
+#     'test': ['115.28.171.71']
+# }
 
 remote_home = '/home/ubuntu'
 remote_working_dir = '/home/ubuntu/workspace/jindouyun'
@@ -88,7 +88,7 @@ def deploy():
         run("touch app.wsgi")
 
 def deploy_proj(loc):
-    rsync_project(local_dir=loc, remote_dir=remote_working_dir, exclude=['.git','bin','data','logs'])
+    rsync_project(local_dir=loc, remote_dir=remote_working_dir, exclude=['.git','bin','data','logs', '*.pem', 'tmp', '.vendor'])
     stop()
     build()
     start()
@@ -101,15 +101,15 @@ def quit_circusd():
     run("/usr/local/bin/circusctl quit")
 
 def start():
-    run("/usr/local/bin/circusctl start mojing")
+    run("/usr/local/bin/circusctl start jindouyun")
 
 def stop():
-    run("/usr/local/bin/circusctl stop mojing")
+    run("/usr/local/bin/circusctl stop jindouyun")
 
 def build():
     with shell_env(GOROOT="/home/ubuntu/go", GOPATH="/home/ubuntu/.go"):
         with cd(remote_working_dir):
-            run('/home/ubuntu/go/bin/go build -o bin/mojing src/main.go', shell=False)
+            run('/home/ubuntu/go/bin/go build -o bin/jindouyun src/main.go', shell=False)
             #run('/usr/bin/scons ', shell=True)
 
 
